@@ -8,7 +8,8 @@ print(f"{format_output}---START---{format_reset}")
 #------------------------------------------------------
 
 #! https://github.com/vindic8or/python_expense_tracker 
-
+#! still needs work, but should have full functionality
+#* By Algirdas Varnagiris
 #?----------------- User name input, and greeting.
 user = input("Please enter username: ")
 print(f"Hello, {user}. \nExpenses aren't fun. \nLet me help you.\n--------")
@@ -76,15 +77,26 @@ def show_expense_list(list):
   for purchase in list:
     print(purchase)
 
+data_entry = True
+
+while data_entry:
+  user_entry()
+  stop = input("Would you like to add another expense? y/n?")
+  if stop == "y":
+    continue
+  else:
+    data_entry = False
+    break
+
 # ! a few test cases
-add_new_expense(1.2,"food", "fruit, veg")
-add_new_expense(1.75,"Food", "tofu, seitan")
+# add_new_expense(1.2,"food", "fruit, veg")
+# add_new_expense(1.75,"Food", "tofu, seitan")
 
-add_new_expense(11.11,"transport", "fuel")
-add_new_expense(12.12,"transport", "tickets")
+# add_new_expense(11.11,"transport", "fuel")
+# add_new_expense(12.12,"transport", "tickets")
 
-add_new_expense(0.12,"etc", "gum")
-add_new_expense(85.20,"etc", "random things")
+# add_new_expense(0.12,"etc", "gum")
+# add_new_expense(85.20,"etc", "random things")
 
 # !-------------------------------
 
