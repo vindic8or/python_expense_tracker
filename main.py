@@ -8,9 +8,8 @@ print(f"{format_output}---START---{format_reset}")
 #------------------------------------------------------
 
 #?----------------- User name input, and greeting.
-user = "Guest"
-# input("Please enter username: ")
-print(f"Hello, {user}. \nExpenses aren't fun. \nLet me help you.")
+user = input("Please enter username: ")
+print(f"Hello, {user}. \nExpenses aren't fun. \nLet me help you.\n--------")
 
 #?----------------- Expense logging
 
@@ -61,58 +60,39 @@ def user_entry():
     add_new_expense(user_entry, user_category, user_description)
 
 
-user_entry()
 
-# ! a few test cases
-# add_new_expense(1.2,"food", "fruit, veg")
-# add_new_expense(1.75,"Food", "tofu, seitan")
-
-# add_new_expense(11.11,"transport", "fuel")
-# print(expenses)
-
-# !
 
 # *prints total amount spent, rounded to two decimals after the separator
 def show_total_spent():
   print(f'Total spent: {round(expenses["total_spent"], 2)}')
 
+def amount_spent_in_category(dict):
+  for key, value in dict.items():
+    print(f'Category: {key}, total spent: {round(value, 2)}.')
 
+def show_expense_list(list):
+  for purchase in list:
+    print(purchase)
 
+# ! a few test cases
+add_new_expense(1.2,"food", "fruit, veg")
+add_new_expense(1.75,"Food", "tofu, seitan")
 
+add_new_expense(11.11,"transport", "fuel")
+add_new_expense(12.12,"transport", "tickets")
 
-# print(expenses["category_spent_on"])
-# expenses["total_spent"] += 1.1
+add_new_expense(0.12,"etc", "gum")
+add_new_expense(85.20,"etc", "random things")
 
-# print(expenses["total_spent"]) 
-  # print(f'Total spent on {category.lower()}: {expenses["category_spent_on"]}')
-  # expenses["category_spent_on"] = {category.lower() : amount =+ amount}
+# !-------------------------------
 
-
-
-
-
-
-#?-----------------
-
-
-
-
-
-
-# first_expense = {
-#   "amount": 21.93,
-#   "category" : "food",
-#   "description": ["fruit", "veg", "snacks"]
-# }
-
-# expenses.update()
-
-print(expenses)
+#?----------------- Show the information to the user once data entry has been finished
 
 show_total_spent()
+amount_spent_in_category(expenses["category_spent_on"])
+show_expense_list(expenses["expenses_list"])
 
-
-
+print(f'Thank you for using the expense tracker, {user}!')
 
 
 
