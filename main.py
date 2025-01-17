@@ -14,10 +14,11 @@ print(f"Hello, {user}. \nExpenses aren't fun. \nLet me help you.")
 
 #TODO under construction
 #?-----------------2 Expense logging
-#* data structure for the expense tracking
+
+#* data structure and initialisation of the expense tracking
 expenses = {
   "total_spent": 0,
-  "category_spent": {
+  "category_spent_on": {
 
   },
   "expenses_list":[
@@ -31,24 +32,35 @@ expenses = {
 
 
 def add_new_expense(amount, category, description):
-  print(amount, category, description)
+  # print(amount, category, description)
   # print(amount)
+# *increases the counter of total_spent
   expenses["total_spent"] += amount
-  expenses["category_spent"]
-  expenses["expenses_list"].push({
-    
-  })
+
+# *if category exists, it updates it's value_spent_on
+  if category.lower() in expenses["category_spent_on"]:
+    expenses["category_spent_on"].update({category.lower(): expenses["category_spent_on"][category.lower()] + amount})
+
+# *creates a category with initial value
+  else: 
+    expenses["category_spent_on"].update({category.lower(): amount})
+  # expenses["category_spent_on"] = {category.lower() : amount =+ amount}
+  print(f'Total spent on {category}: {expenses["category_spent_on"]}')
+  # expenses["expenses_list"].push({
+
+  # })
 
 
 add_new_expense(1.2,"food", ["fruit", "veg"])
-print(expenses)
-add_new_expense(1.75,"Food", ["tofu"])
-print(expenses)
+# print(expenses)
+add_new_expense(1.75,"Food".lower(), ["tofu"])
+# print(expenses)
 add_new_expense(11.11,"transport", "fuel")
 print(expenses)
 
 
 print(round(expenses["total_spent"], 2))
+print(expenses["category_spent_on"])
 # expenses["total_spent"] += 1.1
 
 # print(expenses["total_spent"]) 
