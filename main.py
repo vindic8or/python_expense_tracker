@@ -12,39 +12,63 @@ user = "Guest"
 # input("Please enter username: ")
 print(f"Hello, {user}. \nExpenses aren't fun. \nLet me help you.")
 
+#TODO under construction
 #?-----------------2 Expense logging
+#* data structure for the expense tracking
+expenses = {
+  "total_spent": 0,
+  "category_spent": {
+
+  },
+  "expenses_list":[
+    
+  ] 
+}
+
+
+
+
+
 
 def add_new_expense(amount, category, description):
-  print("test")
+  print(amount, category, description)
+  # print(amount)
+  expenses["total_spent"] += amount
+  expenses["category_spent"]
+  expenses["expenses_list"].push({
+    
+  })
+
+
+add_new_expense(1.2,"food", ["fruit", "veg"])
+print(expenses)
+add_new_expense(1.75,"Food", ["tofu"])
+print(expenses)
+add_new_expense(11.11,"transport", "fuel")
+print(expenses)
+
+
+print(round(expenses["total_spent"], 2))
+# expenses["total_spent"] += 1.1
+
+# print(expenses["total_spent"]) 
+
+#TODO -------------
 
 
 
 
-add_new_expense(1,2,3)
-
-
-# *under construction
-# print(2+2)
-testvar = print(1+2)
-
-
-# testdict = {
-
-# }
 
 
 
 
 
-
-#?-------
-
+#?-----------------
 
 
 
-expenses = {
-  
-}
+
+
 
 first_expense = {
   "amount": 21.93,
@@ -52,9 +76,9 @@ first_expense = {
   "description": ["fruit", "veg", "snacks"]
 }
 
-expenses.update()
+# expenses.update()
 
-print(expenses)
+# print(expenses)
 
 
 
