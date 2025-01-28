@@ -48,7 +48,13 @@ def user_entry():
   entering_data = True
 
   while entering_data:
-    user_entry = float(input("Please enter the amount spent as a positive digital number: "))
+    user_entry = None
+    try:
+      user_entry = float(input("Please enter the amount spent on an item: "))
+    except:
+      print("Please enter a number in digits (ex. 123)")
+      continue
+
     user_category = input("Please enter expense category: ").lower()
     user_description = input("Please enter the purchase description: ").lower()
     try:
@@ -61,8 +67,6 @@ def user_entry():
       continue
     entering_data = False
     add_new_expense(user_entry, user_category, user_description)
-
-
 
 
 # *prints total amount spent, rounded to two decimals after the separator
